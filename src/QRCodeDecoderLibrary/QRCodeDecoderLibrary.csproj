@@ -9,7 +9,7 @@
         <PackageReadmeFile>QRCodeDecoder.PackageReadme.md</PackageReadmeFile>
         <PackageLicenseUrl>https://www.codeproject.com/info/cpol10.aspx</PackageLicenseUrl>
         <Authors>Uzi Granot;Stef Heyenrath;Mohsen Hasani</Authors>
-        <PackageVersion>0.1.1</PackageVersion>
+        <PackageVersion>0.1.2</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup>

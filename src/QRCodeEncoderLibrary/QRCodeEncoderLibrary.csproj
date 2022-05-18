@@ -8,7 +8,7 @@
         <PackageId>MH.QRCodeEncoder</PackageId>
         <PackageReadmeFile>QRCodeEncoder.PackageReadme.md</PackageReadmeFile>
         <PackageLicenseUrl>https://www.codeproject.com/info/cpol10.aspx</PackageLicenseUrl>
-        <PackageVersion>0.1.1</PackageVersion>
+        <PackageVersion>0.1.2</PackageVersion>
         <Authors>Uzi Granot;Stef Heyenrath;Mohsen Hasani</Authors>
     </PropertyGroup>
 
