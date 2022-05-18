@@ -13,10 +13,10 @@ Sources copyright by Uzi Granot using [CPOL](https://www.codeproject.com/info/cp
 Use this to fix a QR Code.
 
 #### QR Code (damaged)
-![Damaged QRCode](https://github.com/StefH/QRCode/blob/main/examples/QRFixer/source-damaged-3.png)
+![Damaged QRCode](https://github.com/mohsen2hasani/QRCode/blob/main/examples/QRFixer/source-damaged-3.png)
 
 #### QR Code (fixed)
-![Fixed QRCode](https://github.com/StefH/QRCode/blob/main/examples/QRFixer/original.png)
+![Fixed QRCode](https://github.com/mohsen2hasani/QRCode/blob/main/examples/QRFixer/original.png)
 
 ### Configure Dependency Injection
 ``` csharp

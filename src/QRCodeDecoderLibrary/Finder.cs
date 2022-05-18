@@ -81,8 +81,7 @@ internal class Finder
 		this.Col2 = Col2;
 		this.HModule = HModule;
 		Distance = double.MaxValue;
-		return;
-		}
+        }
 
 	/// <summary>
 	/// Match during vertical scan
@@ -119,8 +118,7 @@ internal class Finder
 			ModuleSize = 0.5 * (HModule + VModule);
 			Distance = Delta;
 			}
-		return;
-		}
+        }
 
 	/// <summary>
 	/// Horizontal and vertical scans overlap

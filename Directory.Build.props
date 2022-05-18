@@ -10,9 +10,9 @@
         <PackageTags>QRCode, C#, Barcode, Encode, Decode, Fix, Repair</PackageTags>
         <PackageIcon>icon.png</PackageIcon>
         <PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/../../release/PackageReleaseNotes.txt"))</PackageReleaseNotes>
-        <PackageProjectUrl>https://github.com/StefH/QRCode</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/mohsen2hasani/QRCode</PackageProjectUrl>
         <RepositoryType>git</RepositoryType>
-        <RepositoryUrl>https://github.com/StefH/QRCode</RepositoryUrl>
+        <RepositoryUrl>https://github.com/mohsen2hasani/QRCode</RepositoryUrl>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)' == 'Release'">

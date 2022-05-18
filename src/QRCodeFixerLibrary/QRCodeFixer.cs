@@ -1,14 +1,12 @@
 using System;
 using System.Drawing;
 using System.IO;
+using System.Text;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using QRCodeDecoderLibrary;
 using QRCodeEncoderLibrary;
 using Stef.Validation;
-#if NET45_OR_GREATER
-using System.Drawing.Imaging;
-#endif
 
 namespace QRCodeFixerLibrary
 {
@@ -28,9 +26,11 @@ namespace QRCodeFixerLibrary
             Guard.NotNullOrEmpty(sourceFilename, nameof(sourceFilename));
             Guard.Condition(sourceFilename, f => File.Exists(f), nameof(sourceFilename));
             Guard.NotNullOrEmpty(destinationFilename, nameof(destinationFilename));
-            Guard.Condition(destinationFilename, f => destinationFilename.EndsWith(".png", StringComparison.OrdinalIgnoreCase), nameof(destinationFilename));
+            Guard.Condition(destinationFilename, f => destinationFilename.EndsWith(".png", StringComparison.OrdinalIgnoreCase),
+                nameof(destinationFilename));
 
-            _logger.LogDebug("Trying to fix the QR Code in '{sourceFilename}' and save it as '{destinationFilename}'", sourceFilename, destinationFilename);
+            _logger.LogDebug("Trying to fix the QR Code in '{sourceFilename}' and save it as '{destinationFilename}'", sourceFilename,
+                destinationFilename);
 
             var (encoder, data) = DecodeAndEncodeInternal(sourceFilename);
             encoder.SaveQRCodeToPngFile(destinationFilename);
@@ -38,28 +38,12 @@ namespace QRCodeFixerLibrary
             return data;
         }
 
-#if NET45_OR_GREATER
-        public string FixAndSave(string sourceFilename, string destinationFilename, ImageFormat imageFormat)
-        {
-            Guard.NotNullOrEmpty(sourceFilename, nameof(sourceFilename));
-            Guard.Condition(sourceFilename, f => File.Exists(f), nameof(sourceFilename));
-            Guard.NotNullOrEmpty(destinationFilename, nameof(destinationFilename));
-
-            _logger.LogDebug("Trying to fix the QR Code in '{sourceFilename}' and save it as '{destinationFilename}'", sourceFilename, destinationFilename);
-
-            var (encoder, data) = DecodeAndEncodeInternal(sourceFilename);
-            encoder.SaveQRCodeToFile(destinationFilename, imageFormat);
-
-            return data;
-        }
-
-#endif
         private (QRCodeEncoder encoder, string data) DecodeAndEncodeInternal(string sourceFilename)
         {
             var sourceBitmap = new Bitmap(sourceFilename);
 
             var decoder = _serviceProvider.GetRequiredService<QRDecoder>();
-            byte[][] data = decoder.ImageDecoder(sourceBitmap);
+            byte[][] data = decoder.ImageDecoder(sourceBitmap, Encoding.UTF8);
             if (data == null)
             {
                 throw new ApplicationException();
@@ -67,10 +51,9 @@ namespace QRCodeFixerLibrary
 
             var encoder = _serviceProvider.GetRequiredService<QRCodeEncoder>();
             encoder.ErrorCorrection = decoder.ErrorCorrection; // Use same error correction as source
+            encoder.Encode(data, System.Text.Encoding.UTF8, 2, 9);
 
-            encoder.Encode(data);
-
-            return (encoder, QRDecoder.ByteArrayToString(data[0]));
+            return (encoder, QRDecoder.ByteArrayToString(data[0], Encoding.UTF8));
         }
     }
 }

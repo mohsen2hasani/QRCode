@@ -42,7 +42,6 @@ namespace QRCodeDecoderLibrary
 
             // left line length
             LeftLineLength = Math.Sqrt(LeftLineDeltaX * LeftLineDeltaX + LeftLineDeltaY * LeftLineDeltaY);
-            return;
         }
 
         /////////////////////////////////////////////////////////////////////
@@ -149,7 +148,7 @@ namespace QRCodeDecoderLibrary
             int Version = ((int)Math.Round(0.5 * (TopModules + LeftModules)) - 15) / 4;
 
             // not a valid corner
-            if (Version < 1 || Version > 40)
+            if (Version is < 1 or > 40)
             {
                 throw new ApplicationException("Corner is not valid (version number must be 1 to 40)");
             }

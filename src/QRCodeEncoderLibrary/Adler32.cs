@@ -9,7 +9,7 @@ namespace QRCodeEncoderLibrary
         /////////////////////////////////////////////////////////////////////
         internal static uint Checksum(byte[] buffer, int position, int length)
         {
-            // split current Adler chksum into two 
+            // split current Adler chksum into two
             uint low = 1; // AdlerValue & 0xFFFF;
             uint high = 0; // AdlerValue >> 16;
 

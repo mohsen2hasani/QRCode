@@ -53,7 +53,7 @@ namespace QRCodeDecoderLibrary
         internal static int[] CalculateSyndrome
                 (
                 byte[] ReceivedData,        // recived data buffer with data and error correction code
-                int DataLength,         // length of data in the buffer (note sometimes the array is longer than data) 
+                int DataLength,         // length of data in the buffer (note sometimes the array is longer than data)
                 int ErrCorrCodewords    // numer of error correction codewords
                 )
         {
@@ -205,7 +205,6 @@ namespace QRCodeDecoderLibrary
                 for (int j = 2; j < ErrorCount; j += 2) SigmaTotal ^= MultiplyIntByExp(Sigma[j + 1], (zlog * j) % 255);
                 ReceivedData[DataLength - 1 - StaticTables.IntToExp[ps]] ^= (byte)MultiplyDivide(ps, OmegaTotal, SigmaTotal);
             }
-            return;
         }
 
         internal static void PolynominalDivision(byte[] Polynomial, int PolyLength, byte[] Generator, int ErrCorrCodewords)
@@ -227,7 +226,6 @@ namespace QRCodeDecoderLibrary
                     Polynomial[Index + 1 + GeneratorIndex] = (byte)(Polynomial[Index + 1 + GeneratorIndex] ^ StaticTables.ExpToInt[Generator[GeneratorIndex] + Multiplier]);
                 }
             }
-            return;
         }
 
         internal static int Multiply
@@ -279,7 +277,6 @@ namespace QRCodeDecoderLibrary
                 for (int Index2 = 0; Index2 < Index2End; Index2++)
                     if (Poly2[Index2] != 0) Result[Index1 + Index2] ^= StaticTables.ExpToInt[loga + StaticTables.IntToExp[Poly2[Index2]]];
             }
-            return;
         }
     }
 }
