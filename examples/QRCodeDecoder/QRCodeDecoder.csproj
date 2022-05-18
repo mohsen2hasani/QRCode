@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
@@ -18,25 +18,6 @@
         <ProjectReference Include="..\..\src\QRCodeDecoderLibrary\QRCodeDecoderLibrary.csproj"/>
         <ProjectReference Include="..\..\src\QRCodeEncoderLibrary\QRCodeEncoderLibrary.csproj"/>
         <ProjectReference Include="..\..\src\QRCodeFixerLibrary\QRCodeFixerLibrary.csproj"/>
-        <ProjectReference Include="..\..\src\QRCodeSharedLibrary\QRCodeSharedLibrary.csproj"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <None Update="source-damaged-0.png">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </None>
-        <None Update="source-damaged-1.png">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </None>
-        <None Update="source-damaged-2.png">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </None>
-        <None Update="source-damaged-3.png">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </None>
-        <None Update="source-damaged-skewing_and_noise.png">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </None>
     </ItemGroup>
 
 </Project>

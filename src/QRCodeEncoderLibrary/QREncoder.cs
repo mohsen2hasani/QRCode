@@ -227,7 +227,7 @@ namespace QRCodeEncoderLibrary
 
             // reset result variables
             QRCodeMatrix = null;
-            QRCodeVersion = 0;
+            QRCodeVersion = qRCodeVersion ?? 0;
             QRCodeDimension = 0;
             QRCodeImageDimension = 0;
 
@@ -793,6 +793,7 @@ namespace QRCodeEncoderLibrary
 
             if (maskPattern.HasValue)
             {
+                ApplyMask(maskPattern.Value);
                 ResultMatrix = MaskMatrix;
                 MaskMatrix = null;
                 MaskCode = maskPattern.Value;

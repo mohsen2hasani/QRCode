@@ -1,0 +1,40 @@
+﻿using System.Drawing;
+using System.Text;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using QRCodeDecoderLibrary;
+
+var services = new ServiceCollection();
+services.AddQRCodeDecoder();
+
+services.AddLogging(configure =>
+{
+    configure.SetMinimumLevel(LogLevel.Debug);
+    configure.AddSimpleConsole(options =>
+    {
+        options.TimestampFormat = "[yyyy-MM-dd HH:mm:ss.fff] ";
+        options.SingleLine = true;
+    });
+});
+var serviceProvider = services.BuildServiceProvider();
+
+var qrDecoder = serviceProvider.GetRequiredService<QRDecoder>();
+
+// Version: 9 (53 x 53)
+// Mask Pattern: 2
+// Error Correction Level : 15% Error Correction (M)
+// Character Set: ISO-8859-1 (Latin 1)
+var qrCode =
+    "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";
+
+var data = qrDecoder.ImageDecoder(ImageFromBase64(qrCode));
+
+Console.WriteLine(QRDecoder.ByteArrayToString(data[0], Encoding.Latin1));
+
+static Bitmap ImageFromBase64(string base64)
+{
+    var bytes = Convert.FromBase64String(base64);
+    using var ms = new MemoryStream(bytes);
+    var image = Image.FromStream(ms);
+    return new Bitmap(image);
+}

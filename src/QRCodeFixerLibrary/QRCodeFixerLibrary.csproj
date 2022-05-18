@@ -1,16 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <Authors>Stef Heyenrath</Authors>
+        <Authors>Stef Heyenrath;Mohsen Hasani</Authors>
         <Copyright>Stef Heyenrath</Copyright>
         <LangVersion>default</LangVersion>
         <Nullable>enable</Nullable>
         <Description>The QR Code Fixer library allows you to repair a damaged QR Code image.</Description>
         <RootNamespace>QRCodeFixerLibrary</RootNamespace>
-        <PackageId>QRCodeFixer</PackageId>
+        <PackageId>MH.QRCodeFixer</PackageId>
         <PackageReadmeFile>QRCodeFixer.PackageReadme.md</PackageReadmeFile>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <TargetFrameworks>net6.0;netstandard2.1</TargetFrameworks>
+        <PackageVersion>0.1.1</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup>
