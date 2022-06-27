@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net6.0;netstandard2.1</TargetFrameworks>
         <Description>This QR Code library supports decoding a QR Code image.</Description>
         <RootNamespace>QRCodeDecoderLibrary</RootNamespace>
         <LangVersion>default</LangVersion>
@@ -9,7 +8,8 @@
         <PackageReadmeFile>QRCodeDecoder.PackageReadme.md</PackageReadmeFile>
         <PackageLicenseUrl>https://www.codeproject.com/info/cpol10.aspx</PackageLicenseUrl>
         <Authors>Uzi Granot;Stef Heyenrath;Mohsen Hasani</Authors>
-        <PackageVersion>0.1.2</PackageVersion>
+        <PackageVersion>0.1.6</PackageVersion>
+        <TargetFrameworks>net6.0;netstandard2.1</TargetFrameworks>
     </PropertyGroup>
 
     <ItemGroup>
@@ -20,10 +20,10 @@
         <PackageReference Include="Stef.Validation" Version="0.1.0" />
     </ItemGroup>
 
-    <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1' or '$(TargetFramework)' == 'net6.0'">
-        <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
-        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.1" />
-        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    <ItemGroup>
+        <PackageReference Include="System.Drawing.Common" Version="5.0.3" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
     </ItemGroup>
 
     <ItemGroup>

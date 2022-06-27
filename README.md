@@ -1,4 +1,6 @@
 # QRCode
+Works in unix environments by install (apt-utils libgdiplus libc6-dev) packages.
+You can set 'encoding', 'maskPattern' and 'qRCodeVersion' for your QR Code!
 Sources copyright by Uzi Granot using [CPOL](https://www.codeproject.com/info/cpol10.aspx). More details can be found in this [blog](https://www.codeproject.com/Articles/1250071/QR-Code-Encoder-and-Decoder-NET-Framework-Standard).
 
 ## NuGet packages

@@ -10,8 +10,8 @@
         <PackageId>MH.QRCodeFixer</PackageId>
         <PackageReadmeFile>QRCodeFixer.PackageReadme.md</PackageReadmeFile>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageVersion>0.1.6</PackageVersion>
         <TargetFrameworks>net6.0;netstandard2.1</TargetFrameworks>
-        <PackageVersion>0.1.2</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup>

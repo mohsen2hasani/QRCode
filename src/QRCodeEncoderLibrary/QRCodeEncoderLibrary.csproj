@@ -1,15 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net6.0;netstandard2.1</TargetFrameworks>
         <Description>This QR Code library supports encoding a a string to a QR Code image.</Description>
         <RootNamespace>QRCodeEncoderLibrary</RootNamespace>
         <LangVersion>default</LangVersion>
         <PackageId>MH.QRCodeEncoder</PackageId>
         <PackageReadmeFile>QRCodeEncoder.PackageReadme.md</PackageReadmeFile>
         <PackageLicenseUrl>https://www.codeproject.com/info/cpol10.aspx</PackageLicenseUrl>
-        <PackageVersion>0.1.2</PackageVersion>
+        <PackageVersion>0.1.6</PackageVersion>
         <Authors>Uzi Granot;Stef Heyenrath;Mohsen Hasani</Authors>
+        <TargetFrameworks>net6.0;netstandard2.1</TargetFrameworks>
     </PropertyGroup>
 
     <ItemGroup>
@@ -18,7 +18,7 @@
 
     <ItemGroup>
         <PackageReference Include="Stef.Validation" Version="0.1.0" />
-        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
     </ItemGroup>
 
     <ItemGroup>
