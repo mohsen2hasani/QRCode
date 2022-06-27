@@ -87,18 +87,12 @@ namespace QRCodeEncoderLibrary
 
                 _ModuleSize = value;
 
-                // quiet zone must be at least 4 times module size
-                if (_QuietZone < 4 * value)
-                {
-                    _QuietZone = 4 * value;
-                }
-
                 // recalculate image dimension
                 QRCodeImageDimension = 2 * _QuietZone + QRCodeDimension * _ModuleSize;
             }
         }
 
-        private int _ModuleSize = 2;
+        private int _ModuleSize = 4;
 
         /// <summary>
         /// Quiet zone around the barcode in pixels (Default: 8)
@@ -122,7 +116,7 @@ namespace QRCodeEncoderLibrary
             }
         }
 
-        private int _QuietZone = 8;
+        private int _QuietZone = 1;
 
         /// <summary>
         /// ECI Assignment Value
@@ -149,6 +143,8 @@ namespace QRCodeEncoderLibrary
         /// </summary>
         /// <param name="stringDataSegment">string data segment</param>
         /// <param name="encoding">UTF8, Latin, ...</param>
+        /// <param name="maskPattern">Mask Pattern</param>
+        /// <param name="qRCodeVersion">Version</param>
         public void Encode(string stringDataSegment, Encoding encoding, int maskPattern, int? qRCodeVersion)
         {
             Guard.NotNullOrEmpty(stringDataSegment, nameof(stringDataSegment));
@@ -165,6 +161,8 @@ namespace QRCodeEncoderLibrary
         /// </summary>
         /// <param name="stringDataSegments">string data segments</param>
         /// <param name="encoding">UTF8, Latin, ...</param>
+        /// <param name="maskPattern">Mask Pattern</param>
+        /// <param name="qRCodeVersion">Version</param>
         public void Encode(string[] stringDataSegments, Encoding encoding, int maskPattern, int? qRCodeVersion)
         {
             Guard.NotNullOrEmpty(stringDataSegments, nameof(stringDataSegments));
@@ -196,6 +194,8 @@ namespace QRCodeEncoderLibrary
         /// </summary>
         /// <param name="singleDataSeg">Data segment byte array</param>
         /// <param name="encoding">UTF8, Latin, ...</param>
+        /// <param name="maskPattern">Mask Pattern</param>
+        /// <param name="qRCodeVersion">Version</param>
         /// <returns>QR Code boolean matrix</returns>
         public void Encode(byte[] singleDataSeg, Encoding encoding, int maskPattern, int? qRCodeVersion)
         {
