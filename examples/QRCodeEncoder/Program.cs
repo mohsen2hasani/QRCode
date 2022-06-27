@@ -13,7 +13,7 @@ var qrCodeEncoder = serviceProvider.GetRequiredService<QRCodeEncoder>();
 // Mask Pattern: 2
 // Error Correction Level : 15% Error Correction (M)
 // Character Set: ISO-8859-1 (Latin 1)
-const string data = "2KjZh9mG2KfYsiAgICAg2YXYs9mE2YXZiiAgICAgICAgIDE0MDEvMDMvMTE1ODI3NTQwMjIgNDUwNCAzNzEgIDE5NzMxMDc0MDM2NDYxNyA=";
+const string data = "https://github.com/mohsen2hasani/QRCode";
 
 qrCodeEncoder.Encode(data, Encoding.Latin1, 2, 9);
 using var ms = new MemoryStream();
